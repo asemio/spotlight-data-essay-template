@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>ARF Utils</title>
-    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" http-equiv="Content-Type">
+    <title>Spotlight Report</title>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" http-equiv="Content-Type" charset="utf-8">
     <link rel="icon" type="image/png" href="images/favicon.png">
 
     <!-- Import Libraries -->
@@ -17,17 +17,14 @@
       QUnit.config.autostart = false;
     </script>
  
+    <!-- Load the experimental Progressbar module -->
+    <script src="modules/progressbar/progressbar.js"></script>
+
     <!-- Load the library stylesheets -->
     <link rel="stylesheet" type="text/css" href="lib/jquery-ui/jquery-ui.min.css">
 
      <!-- Load the current theme's stylesheet -->
-    <link rel="stylesheet" type="text/css" href="themes/standard/standard.css">
-
-    <!-- Load the module libraries -->
-    <script src="modules/coq/lib/node_modules/jscoq/ui-js/jscoq-loader.js"></script>
-
-    <!-- Load the experimental Progressbar module -->
-    <script src="modules/progressbar/progressbar.js"></script>
+    <link rel="stylesheet" type="text/css" href="themes/report/report.css">
 
     <!-- Load the Core Module -->
     <script src="modules/core/core.js"></script>
@@ -37,12 +34,9 @@
       <div id='header-content'>
         <div id='header-menu-container'>
           <div id='header-menu'>
-            <a class='menu-item header-menu-item' href='#book_book_page/modules%2Fbook%2Fdatabase.xml/arf'>HOME</a>
-            <a class='menu-item header-menu-item' href='#book_template_page/modules%2Fbook%2Fdatabase.xml/arf/nutrition'>NUTRITION</a>
-            <a class='menu-item header-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/health'>HEALTH</a>
-            <a class='menu-item header-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/practice'>PRACTICE</a>
-            <a class='menu-item header-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/study'>STUDY</a>
-            <a class='menu-item header-menu-item' href='data/arf.pdf'>FRAMEWORK</a>
+            <a class='menu-item header-menu-item' href='##intro'>INTRO</a>
+            <a class='menu-item header-menu-item' href='##analysis'>ANALYSIS</a>
+            <a class='menu-item header-menu-item' href='##conclusion'>CONCLUSION</a>
           </div>
         </div>
       </div>
@@ -50,17 +44,77 @@
     <div id='mobile-menu'>
       <div id='mobile-menu-header'>MENU</div>
       <div id='mobile-menu-content'>
-        <a class='menu-item mobile-menu-item' href='#book_book_page/modules%2Fbook%2Fdatabase.xml/arf'>HOME</a>
-        <a class='menu-item mobile-menu-item' href='#book_template_page/modules%2Fbook%2Fdatabase.xml/arf/nutrition'>NUTRITION</a>
-        <a class='menu-item mobile-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/health'>HEALTH</a>
-        <a class='menu-item mobile-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/practice'>PRACTICE</a>
-        <a class='menu-item mobile-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/study'>STUDY</a>
-        <a class='menu-item mobile-menu-item' href='data/arf.pdf'>FRAMEWORK</a>
+        <a class='menu-item mobile-menu-item' href='##intro'>INTRO</a>
+        <a class='menu-item mobile-menu-item' href='##analysis'>ANALYSIS</a>
+        <a class='menu-item mobile-menu-item' href='##conclusion'>CONCLUSION</a>
       </div>
     </div>
     <div id='body'>
-      <div class='main-content'>
-        <div class='page_block'></div>
+      <div id='main-content'>
+        <div id='title' class='section dark-section'>
+          <div class='section-content'>
+            <div id='intro-header' class='section-header'>
+              <h1>Spotlight: Financial Mobility Planning</h1>
+              <p>Preliminary Spotlight Results</p>
+            </div>
+          </div>
+        </div>
+        <div id='intro' class='section light-section'>
+          <div class='section-content'>
+            <div class='section-header'>
+              <h1>Introduction</h1>
+            </div>
+            <div class='section-body'>
+              <h2>What is Spotlight?</h2>
+              <hr/>
+              <p>Spotlight is part of Asemio’s Community Integration Platform. It delivers actionable data insights quickly by providing the tools and guidance agencies need to share data safely — without risking the privacy of the communities they serve. Foundational to the Spotlight implementation approach is the <strong>Actionable Insight Cycle</strong>, which is how we describe the path from project identification to actionable results through collaborative data sharing. The goal of this cycle is to facilitate the pursuit of knowledge through data sharing and dialogue.</p>
+              <img src="images/ai_cycle.png" data-lightbox="ai_cycle" data-title="Asemio's Actionable Insight Cycle."/>
+              <h2>Analysis Goals</h2>
+              <hr/>
+              <h2>Data Contributions</h2>
+              <hr/>
+              <div class="accordion_block">
+                <div class="accordion_item_block">
+                  <div class="accordion_item_number">1</div>
+                  <div class="accordion_item_title"></div>
+                  <div class="accordion_item_body">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id='analysis' class='section light-section'>
+          <div class='section-content'>
+            <div id='intro-header' class='section-header'>
+              <h1>Analysis</h1>
+            </div>
+            <div class='section-body'>
+            </div>
+          </div>
+        </div>
+        <div id='conclusion' class='section light-section'>
+          <div class='section-content'>
+            <div id='intro-header' class='section-header'>
+              <h1>Conclusion</h1>
+            </div>
+            <div class='section-body'>
+            </div>
+          </div>
+        </div>
+        <!-- contact -->
+        <div id='contact' class='dark-section section'>
+          <div class='section-content'>
+            <div class='section-header'>
+              <h1>Contact Asemio</h1>
+            </div>
+            <div class='section-body'>
+              <ul>
+                <li><span class='contact-label'>email:</span><a href="mailto:tpryce@asemio.com">tpryce@asemio.com</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div id="back_to_top"><a href="#">Back To Top</a></div>
