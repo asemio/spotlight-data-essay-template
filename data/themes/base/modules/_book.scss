@@ -1,0 +1,197 @@
+#page_title {
+  padding: 20px 0;
+
+  .book_link {
+    color: $red;
+  }
+}
+
+#book_articles_section {
+  li {
+    list-style: none;
+  }
+
+  ul {
+    list-style-image: none;
+  }
+}
+
+.book_section.template_section[data-template-level="1"] {
+  .padded-content {
+    padding: 0px 20px;
+    margin: 0px auto;
+    max-width: 1300px;
+  }
+}
+
+.book_front_body {
+  padding: 0px 20px;
+  margin: 0px auto;
+  max-width: 1300px;
+}
+
+.page_footer {
+  margin-top: 40px;
+
+  hr {
+    margin: 40px 0 0;
+  }
+}
+
+.book_search_snippet_highlight {
+  background-color: $highlight;
+}
+
+/* Concept Boxes */
+
+.conceptBoxText {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  margin: 0 auto;
+
+  p {
+    border-top:$primary-color 2px solid;
+    border-bottom:$primary-color 2px dotted;
+    padding:5px 0px 10px 0px;
+    margin:0px;display:block;
+    span:first-child {
+      font-weight:bold;
+    }
+  }
+}
+
+.helpfulHintsBox { 
+  margin-top: 20px;
+  margin-right:auto;
+  margin-bottom:30px;
+  margin-left:auto;padding-left:100px;
+  background-repeat:no-repeat;
+  background-position:left center;
+  height:90px;
+  width:80%;
+  display:table;
+  background-image:url(images/helpfulHint.png);
+}
+
+.keyConceptBox {
+  @extend .helpfulHintsBox;
+  background-image:url(images/keyConcept.png);
+}
+
+.thingsToRememberBox {
+  @extend .helpfulHintsBox;
+  background-image:url(images/thingsToRemember.png);
+}
+
+.cautionBox {
+  @extend .helpfulHintsBox;
+  background-image:url(images/caution.png);
+}
+
+/* Glossary Styles */
+
+table.glossary {
+  tbody {
+    tr {
+      td:first-child {
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+  }
+}
+/* Screenshot Styles */
+
+.screenshotContainer {
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.screenshotBox {
+  text-align:left;
+  margin-left:auto;
+  margin-right:auto;
+  display:table;
+  max-width: 100%;
+}
+
+.screenshotBox img {     
+  margin: 0 auto;
+  width: 100%;
+  max-width:100%;
+  border: solid 1px #333;
+}
+
+.screenshotText {
+  display:table-caption;
+  caption-side:bottom;
+  padding:0px;
+  margin-top:5px;
+}
+
+.figCaption {
+  text-align:left;
+  font-weight:600;
+  color:#333;
+  margin: 0;
+  padding:0;
+}
+
+/* Previous/Next Lesson Nav Links */
+
+.leaf_nav {
+  height: 100px;
+  padding: 20px 0px 40px;
+
+  @include media(max-width $small-width){
+    height: auto;
+  }
+}
+
+.previous_page {
+  .menu_link {
+    background: url('images/previous-arrow.png') no-repeat 0px 50%;
+    display: block;
+    float: left;
+    padding-left: 30px;
+
+    &:before {
+      color: $dark_gray;
+      content: "Previous";
+      display: block;
+    }
+
+    @include media(max-width $small-width){
+      background: none;
+      float: none;
+      padding: 0px;
+    }
+  }
+}
+
+.next_page {
+  .menu_link {
+    background: url('images/next-arrow.png') no-repeat 100% 50%;
+    display: block;
+    float: right;
+    padding-right: 30px;
+    text-align: right;
+
+    &:before {
+      color: $dark_gray;
+      content: "Next";
+      display: block;
+    }
+
+    @include media(max-width $small-width){
+      background: none;
+      float: none;
+      padding: 10px 0px 0px 0px;
+      text-align: left;
+    }
+  }
+}

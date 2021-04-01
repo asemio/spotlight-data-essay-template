@@ -1,0 +1,59 @@
+/* The Accordion Module */
+
+.accordion {
+  border: 1px solid rgba(210, 210, 210, 100);
+  @include box-shadow(0px 2px 5px 0px rgba(0, 0, 0, 0.16));
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  .accordion_item {
+    /*border: 1px solid rgba(210, 210, 210, 100);*/
+
+    .accordion_item_header {
+      border-bottom: 1px solid rgba(210, 210, 210, 100);
+      cursor: pointer;
+      display: table;
+      border-collapse: collapse;
+      table-layout: fixed;
+      width: 100%;
+
+      .accordion_item_header_left {
+        border-right: 1px solid rgba(210, 210, 210, 100);
+        color: $dark_gray;
+        display: table-cell;
+        text-align: center;
+        width: 50px
+      }
+
+      .accordion_item_header_middle {
+        color:   $text_gray;
+        display: table-cell;
+        padding: 15px 0px 15px 20px;
+      }
+
+      .accordion_item_header_right {
+        background-image:    url('images/expandArrow.png');
+        background-position: 50% 50%, center;
+        background-repeat:   no-repeat;
+        border-left:         1px solid rgba(210, 210, 210, 100);
+        display:             table-cell;
+        width:               30px;
+      }
+    }
+    .accordion_item_header:hover{
+    background-color: rgba(244, 244, 244, 100);
+    }
+    .accordion_item_body {
+      width:   100%;
+      border-bottom: 1px solid rgba(210, 210, 210, 100);
+    }
+
+    &.accordion_expanded {
+      .accordion_item_header {
+        .accordion_item_header_right {
+          background-image: url('images/collapseArrow.png');
+        }
+      }
+    }
+  }
+}

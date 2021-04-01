@@ -1,0 +1,39 @@
+/*
+  This stylesheet defines the default styles
+  for the Progressbar module.
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700);
+
+/* Style the progress bar. */
+.progressbar_block {
+  font-family: 'Open Sans';
+  font-size: 16px;
+  left: 15%;
+  position: absolute;
+  text-align: center;
+  top: 100px;
+  width:  70%;
+  .progressbar_percentage {
+    color: #d26e6e;
+    margin-bottom: 10px;
+    min-height: 25px; 
+  }
+  .progressbar_notice {
+    color: #525252;
+    margin-bottom: 10px;
+    min-height: 25px; 
+  }
+  .progressbar_bar {
+    height: 26px;
+    border-radius: 13px;
+    border: solid 2px rgb(234, 234, 234);
+    .ui-progressbar-value {
+      background-image: linear-gradient(to right, rgb(64, 153, 200), rgb(0, 98, 168));
+      border: none !important;
+      border-radius: 0px !important;
+      margin: 0px;
+    }
+  }
+}
+

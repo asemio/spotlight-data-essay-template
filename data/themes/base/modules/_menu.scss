@@ -1,0 +1,39 @@
+/* Menu Module Styles */
+
+ol[data-menu-level="3"] {
+  color: $red;
+}
+ol[data-menu-level="3"] > li {
+  list-style-type: decimal;
+}
+
+li[data-menu-level="5"] {
+  list-style-image: url(images/liArrow.png);
+}
+
+$link-blue: rgb(68,134,249);
+.menu_leaf_breadcrumb {
+  font-size: 14px;
+
+  .menu_leaf_breadcrumb_item .menu_link {
+    color: $link-blue;
+    &:hover {
+      color: $link-color;
+    }
+  }
+  .menu_leaf_breadcrumb_item_first {
+    display: none;
+  }
+  .menu_leaf_breadcrumb_arrow {
+    color: $text_gray;
+    margin: 0 10px;
+  }
+  .menu_leaf_breadcrumb_arrow_first {
+    color: $link-blue;
+    font-size: 18px;
+    margin: 0;
+    &:hover {
+      color: $link-color;
+    }
+  }
+}

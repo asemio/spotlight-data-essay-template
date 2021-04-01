@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<books>
+  <book>
+    <name>example_book</name>
+    <title><![CDATA[Example Book]]></title>
+    <body><![CDATA[This is an example book]]></body>
+    <content>
+      <section>
+        <name>example_section</name>
+        <title><![CDATA[Example Section]]></title>
+        <content>
+          <page>
+            <name>example_page</name>
+            <title><![CDATA[Example Page]]></title>
+            <body><![CDATA[This is an example page.]]></body>
+            <searchable>true</searchable>
+          </page>
+          <link>
+            <name>example_link</name>
+            <title><![CDATA[Example Link]]></title>
+            <pageId>book_page_page/modules%2Fbook%2Fdatabase.xml.example/example_book/example_section/example_page</pageId>
+            <searchable>true</searchable>
+          </link>          
+        </content>
+      </section>
+    </content>
+  </book>
+  <book>
+    <name>example_book_2</name>
+    <title><![CDATA[Another Example Book]]></title>
+    <body><![CDATA[This is another example book]]></body>
+    <content>
+      <section>
+        <name>example_section_2</name>
+        <title><![CDATA[Another Example Section]]></title>
+        <content>
+          <page>
+            <name>example_page_2</name>
+            <title><![CDATA[Another Example Page]]></title>
+            <body><![CDATA[This is another example page.]]></body>
+            <searchable>true</searchable>
+          </page>
+        </content>
+      </section>
+    </content>
+  </book>
+</books>

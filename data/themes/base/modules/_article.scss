@@ -1,0 +1,109 @@
+/* Article Pages */
+
+.article_page_container {
+  padding: 20px; 
+  margin: 0px auto;
+  max-width: 1300px;
+}
+
+/* Featured Additions */
+
+.article_article {
+  .article_header {
+    .article_header_title {
+      font-size: 1.2em;
+    }
+  }
+  .article_byline {
+    padding: 20px 0 0;
+  }
+}
+ul.article_list {
+  @include outer-container;
+  list-style: none;
+  margin: 60px auto 20px auto;
+  text-align: center;
+
+  li {
+    @include box-shadow(0px 1px 1px rgba(0, 0, 0, 0.3));
+    @include span-columns(3);
+    @include omega(4n);
+    margin-bottom: 20px;
+
+    @include media(max-width $medium-width){
+      @include span-columns(6);
+      @include omega(2n);
+    }
+
+    @include media(max-width $extra-small-width){
+      @include span-columns(12);
+    }
+
+    div.article_header::before {
+      content: "";
+      background-image:url("images/featDoc.png");
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+      height: 50px;
+      width: 50px;
+      background-color: $primary-color;
+      padding-right: 10px;
+      float: left;
+    }
+
+    div.article_header {
+      width: 100%;
+      padding: 7px 5px;
+      float:left;
+      background-color: $primary-color;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+      h2 {
+        width: 80%;
+        text-align: left;
+        font-weight: 600;
+        font-size: 110%;
+        margin: 0px;
+        padding: 0px 10px 0px 0px;
+        margin-left: 50px;
+
+        a {            
+          color: white;
+        }
+      }
+    }
+
+    div.article_byline {
+      text-align: left;
+      font-size:100%;
+      font-weight: 200;     
+      padding: 10px 0px 5px 0px;
+      clear: left;     
+      .article_date {
+        margin: 0px 15px;
+        font-style:italic;
+        font-size: 1em;
+      }
+    }
+
+    div.article_summary {
+      text-align: left;
+      font-weight: 400;  
+      float: left;      
+      padding: 0px 0px 10px 0px;
+      margin: 0px;
+      border-bottom: 1px solid $medium_gray;
+      
+      p {
+        padding: 0px;
+        margin: 0px 15px 10px 15px;
+      }
+
+      a {
+        color: $primary-color;
+        font-weight: 600;
+        margin: 0px 15px;
+      }
+    }
+  }
+}

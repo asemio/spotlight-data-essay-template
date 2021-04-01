@@ -1,0 +1,193 @@
+/* Search Module */
+
+.search_interface_block {
+  display: none;
+}
+
+.search_page {
+  padding: 0px 5% 2% 5%;
+}
+
+.search_link {  
+  background: white;
+  border: 1px solid $primary-color;
+  height: 35px;
+  width: 250px;
+}
+
+.search_form {
+  background: white;
+  border: 1px solid $primary-color;
+  height: 2.5em;
+  width: 100%;
+}
+
+.search_input {
+  border: none;
+  float: left;
+  height: 100%;
+  outline: 0px;
+  padding-left: 8px; 
+  width: 80%;
+}
+
+.search_button {
+  background: $primary-color url("images/searchIcon.png") no-repeat;
+  background-position: 50% 50%;
+  float: right;
+  height: 100%;
+  width: 20%;
+  max-width: 35px;
+}
+
+.search_button:hover{
+  cursor: pointer;
+}
+
+ol.search_results {
+  margin: 0;
+  margin-left: 3em;
+  padding: 0;
+  /* counter-reset: li-counter; */
+  li {
+    list-style-type: none;
+    list-style-image: none;
+    position: relative;
+    margin-bottom: 30px;
+    padding-left: 0.5em;
+    min-height: 2em;
+    border-left: 2px solid #cccccc;
+  }
+  li:before {
+    position: absolute;
+    top: 0;
+    left: -2em;
+    width: 0.8em;
+    font-size: 2em;
+    line-height: 1;
+    font-weight: bold;
+    text-align: right;
+    color: #464646;
+    content: counter(search_interface);
+    counter-increment: search_interface;
+  }
+}
+
+.search_form_block {
+  display: none;
+}
+
+.search_results_block {
+  display: none;
+}
+
+.search_loading {
+  width: 100%;
+  min-height: 50px;
+  background-image: url('images/bx_loader.gif');
+  background-repeat: no-repeat;
+  background-position: 50%;
+  color: transparent;
+}
+
+.search_no_results {
+  margin-bottom: 30px;
+}
+
+.search_result {
+  .search_result_link {
+    h3 {
+      padding-top: 0;
+    }
+  }
+  .search_result_snippet {
+    margin: 5px 0 0 0;
+  }
+}
+
+/*
+  Accepts one argument: radius, an integer;
+  and renders the pagination links within the
+  element that this is applied to using the
+  default style.
+*/
+@mixin search_pagination($radius: 5) {
+  /* Hide the pagination links by default. */
+  .search_pagination_link {
+    display: none;
+    float: left;
+  }
+
+  /*
+    Show those pagination links within a given
+    distance from the first link.
+  */
+  .search-pagination-page-link-radius-#{$radius} {
+    display: block;
+  }
+
+  /*
+    Display the previous, next, first, and last
+    pagination links.
+  */
+  .search_pagination_step_link_prev,
+  .search_pagination_step_link_next,
+  .search_pagination_quicklink_first,
+  .search_pagination_quicklink_last {
+    display: block;
+  }
+}
+
+/* Specifies the width at which the pagination elements collapses. */
+$search_pagination_breakpoint: 700px;
+
+/* Specifies the spacing between pagination links. */
+$search_link_spacing: 15px;
+
+/* Renders the pagination element. */
+.search_pagination {
+  @media (min-width: $search_pagination_breakpoint) {
+    @include search_pagination(2);
+  }
+  @media (max-width: $search_pagination_breakpoint) {
+    @include search_pagination(0);
+  }
+  margin-bottom: 20px;
+
+  /* Display the pagination links inline. */
+  &:after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+  .search_pagination_link {
+    border: 1px solid $medium_gray;
+    color: $blue;
+    cursor: pointer;
+    margin-top: -1px; /* tighten borders. */
+    margin-left: -1px; /* tighten borders. */
+    padding: $search_link_spacing;
+    text-align: center;
+
+    &:hover {
+      background-color: $light_gray;
+    }
+  }
+  .search_disabled {
+    color: $medium_gray;
+    cursor: not-allowed;
+  }
+  .search_pagination_page_link_current {
+    background-color: $blue !important;
+    color: white;
+  }
+  .search_pagination_quicklink_first {
+    border-bottom-left-radius: 2px;
+    border-top-left-radius: 2px;
+  }
+  .search_pagination_quicklink_last {
+    border-bottom-right-radius: 2px;
+    border-top-right-radius: 2px;
+  }
+}
+

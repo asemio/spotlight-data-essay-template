@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <forms>
+    <form>
+      <name>example_form</name>
+      <url>https://docs.google.com/forms/d/1DfYAPdDJwm7-Ghn94eKIrDtpbTSGSiPzBvi0fla3A3Y</url>
+      <template>modules/form/templates/example_form.html</template>
+    </form>
+  </forms>
+</settings>

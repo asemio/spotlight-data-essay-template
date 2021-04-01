@@ -1,0 +1,94 @@
+/* Styles for the Embedded Video Module */
+
+$embedded_video_height: 450px; /* Note: this must be the same as the video player height which is fixed. */
+$embedded_video_player_width: 70%;
+$embedded_video_transcript_width: 100% - $embedded_video_player_width;
+$embedded_video_transcript_section_header_height: 50px;
+$embedded_video_transcript_section_body_height: $embedded_video_height - $embedded_video_transcript_section_header_height;
+
+$embedded_video_medium_screen_player_width: 60%;
+$embedded_video_medium_screen_transcript_width: 100% - $embedded_video_medium_screen_player_width;
+
+$embedded_video_small_screen_transcript_section_height: 200px;
+$embedded_video_small_screen_transcript_section_body_height: $embedded_video_small_screen_transcript_section_height - $embedded_video_transcript_section_header_height;
+
+.embedded_video {
+  height: $embedded_video_height;
+  margin-bottom: 40px;
+
+  .embedded_video_player_section {
+    float: left;
+    height: $embedded_video_height;
+    width: 70%;
+  }
+
+  .embedded_video_transcript_section {
+    background-color: $light_gray;
+    float: left;
+    height: $embedded_video_height;
+    width: $embedded_video_transcript_width;
+
+    .embedded_video_transcript_section_header {
+      background-color: $dark_gray;
+      color: white;
+      height: $embedded_video_transcript_section_header_height;
+      padding: 0px 40px;
+
+      .embedded_video_transcript_section_header_title {
+        color: white;
+        line-height: $embedded_video_transcript_section_header_height;
+        margin: 0px;
+        padding: 0px;
+      }
+    }
+
+    .embedded_video_transcript_section_body {
+      height: $embedded_video_transcript_section_body_height;
+      overflow-y: scroll;
+      padding: 40px;
+
+      .video_library_transcript {
+        display: block;
+
+        .video_library_caption:hover {
+          @include navItemHover($primary-color, rgb(255,255,204));
+        }
+      }
+    }
+  }
+}
+
+@include media(max-width $large-width) {
+  .embedded_video {
+    .embedded_video_player_section {
+      width: $embedded_video_medium_screen_player_width;
+    }
+
+    .embedded_video_transcript_section {
+      width: $embedded_video_medium_screen_transcript_width;
+    }
+  }
+}
+
+@include media(max-width $small-width) {
+  /* Reflow the player and transcript sections in a single column. */
+
+  .embedded_video {
+    height: auto;
+
+    .embedded_video_player_section {
+      float: none;
+      width: 100%;
+    }
+
+    .embedded_video_transcript_section {
+      float: none;
+      height: $embedded_video_small_screen_transcript_section_height;
+      width: 100%;
+
+      .embedded_video_transcript_section_body {
+        height: $embedded_video_small_screen_transcript_section_body_height;
+      }
+    }
+  }
+}

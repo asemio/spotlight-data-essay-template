@@ -1,0 +1,182 @@
+/* BxSlider Module */
+
+.bx-wrapper {
+  color: white;
+  text-align: center;
+  margin: 0 auto !important;
+  @include box-shadow(none);
+
+  .bx-viewport {
+    height: 100%;
+    left: 0px !important;
+    margin-top: 0px !important;
+    border-left: 0px !important;
+    border-right: 0px !important;
+    border-top: 0px !important;
+    border-bottom: 0px !important;
+  }
+}
+
+.bxslider {
+  height: 100%;
+  margin: 0px 0px;
+
+  li {
+    height: 100%;
+    margin: 0px 0px;
+
+    .banner {
+
+      .banner-header {
+        h1 {
+          font-size: 2em;
+          color: white;
+          text-shadow: $banner-text-shadow;
+        }
+      }
+
+      .banner-body {
+        display: table;
+        margin: 0 auto;
+
+        .banner-body-content {
+          display: table-row;
+
+          .banner-body-icon {
+            border-right: 1px dotted #fff;  
+            display: table-cell;
+            height: 100%;
+            padding-right: 20px;
+            width: 170px;
+
+            .slide-icon {
+              width: 100%;
+            }
+          }
+
+          .banner-body-text {
+            display: table-cell;
+            padding-left: 20px;
+            text-align: left;
+            vertical-align: top;
+
+            p {
+              font-size:1.2em;
+              font-weight: 200;
+              color: #fff;
+              text-shadow: $banner-text-shadow;
+            }
+
+            .bannerButton {
+              @include box-shadow(0px 2px 2px rgba(0, 0, 0, 0.2));
+              background: $primary-color;
+              border: none;
+              color:#fff;
+              cursor: pointer;  
+              display: inline-block;
+              line-height: 1.4em;
+              padding: .6em 1.2em .6em 1.2em;
+              text-align: center;
+              transition: all 0.2s ease;
+            }
+
+            .bannerButton:hover,
+            .bannerButton:active {
+              @include box-shadow(0px 4px 4px rgba(0, 0, 0, 0.2));
+              color: #fff;
+              background: lighten($primary-color, 10%);
+              text-decoration:none;
+              transition: all 0.2s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  padding: 1em 1em 2.5em 1em;
+}
+
+/* Slide Background Images */
+
+#slideOne {
+  @extend .slide;
+  background-image: url("images/slideOne.png");
+}
+
+#slideTwo {
+  @extend .slide;
+  background-image: url("images/slideTwo.png");
+}
+
+#slideThree {
+  @extend .slide;
+  background-image: url("images/slideThree.png");
+}
+
+/* Centering  and styling the Slider Controls */
+
+.bx-wrapper .bx-pager, .bx-wrapper .bx-controls-auto {
+  position: relative !important;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+  text-align: center !important;
+  width: 80% !important;
+}
+
+div.bx-pager-item {
+  margin: 10px !important;
+}
+
+div.bx-controls-direction {
+  a {
+    top: 45% !important;
+  }
+}
+
+@include media(max-width $small-width) {
+  .bxslider {
+    li {
+      .banner {
+        .banner-header {
+          h1 {
+            font-size: 1.5em;
+          }
+        }
+
+        .banner-body {
+          display: block;
+
+          .banner-body-content {
+            display: block;
+
+            .banner-body-icon {
+              border: none;
+              display: block;
+              margin: 0px auto;
+              padding: 0px;
+            }
+
+            .banner-body-text {
+              display: block;
+              text-align: center;
+
+              p {
+                font-size: 1em;
+                margin: .5em 0px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

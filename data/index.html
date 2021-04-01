@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ARF Utils</title>
+    <meta name="viewport" content="initial-scale = 1.0,maximum-scale = 1.0" http-equiv="Content-Type">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+    <!-- Import Libraries -->
+    <script src="lib/async/dist/async.js"></script>
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/jquery-getCSS/jquery.getCSS.js"></script>
+    <script src="lib/jquery-ui/jquery-ui.js"></script>
+    <script src="lib/jq-ajax-progress/src/jq-ajax-progress.js"></script>
+    <script src="lib/uri/uri.js"></script> 
+    <script src="lib/qunit/qunit.js"></script>
+    <script>
+      QUnit.config.autostart = false;
+    </script>
+ 
+    <!-- Load the library stylesheets -->
+    <link rel="stylesheet" type="text/css" href="lib/jquery-ui/jquery-ui.min.css">
+
+     <!-- Load the current theme's stylesheet -->
+    <link rel="stylesheet" type="text/css" href="themes/standard/standard.css">
+
+    <!-- Load the module libraries -->
+    <script src="modules/coq/lib/node_modules/jscoq/ui-js/jscoq-loader.js"></script>
+
+    <!-- Load the experimental Progressbar module -->
+    <script src="modules/progressbar/progressbar.js"></script>
+
+    <!-- Load the Core Module -->
+    <script src="modules/core/core.js"></script>
+  </head>
+  <body id="top">
+    <div id='header'>
+      <div id='header-content'>
+        <div id='header-menu-container'>
+          <div id='header-menu'>
+            <a class='menu-item header-menu-item' href='#book_book_page/modules%2Fbook%2Fdatabase.xml/arf'>HOME</a>
+            <a class='menu-item header-menu-item' href='#book_template_page/modules%2Fbook%2Fdatabase.xml/arf/nutrition'>NUTRITION</a>
+            <a class='menu-item header-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/health'>HEALTH</a>
+            <a class='menu-item header-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/practice'>PRACTICE</a>
+            <a class='menu-item header-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/study'>STUDY</a>
+            <a class='menu-item header-menu-item' href='data/arf.pdf'>FRAMEWORK</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id='mobile-menu'>
+      <div id='mobile-menu-header'>MENU</div>
+      <div id='mobile-menu-content'>
+        <a class='menu-item mobile-menu-item' href='#book_book_page/modules%2Fbook%2Fdatabase.xml/arf'>HOME</a>
+        <a class='menu-item mobile-menu-item' href='#book_template_page/modules%2Fbook%2Fdatabase.xml/arf/nutrition'>NUTRITION</a>
+        <a class='menu-item mobile-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/health'>HEALTH</a>
+        <a class='menu-item mobile-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/practice'>PRACTICE</a>
+        <a class='menu-item mobile-menu-item' href='#book_page_page/modules%2Fbook%2Fdatabase.xml/arf/study'>STUDY</a>
+        <a class='menu-item mobile-menu-item' href='data/arf.pdf'>FRAMEWORK</a>
+      </div>
+    </div>
+    <div id='body'>
+      <div class='main-content'>
+        <div class='page_block'></div>
+      </div>
+    </div>
+    <div id="back_to_top"><a href="#">Back To Top</a></div>
+    <div id="footer"></div>
+  </body>
+</html>

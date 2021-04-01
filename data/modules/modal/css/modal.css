@@ -1,0 +1,24 @@
+/*
+  This stylesheet is responsible for defining
+  the default styles applied to Modal block
+  elements.
+*/
+.modal {
+  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100vw; }
+  .modal .modal_overlay {
+    background-color: rgba(0, 0, 0, 0.8);
+    height: 100%;
+    width: 100%; }
+    .modal .modal_overlay .modal_element {
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      width: 500px; }
+
+/*# sourceMappingURL=modal.css.map */
