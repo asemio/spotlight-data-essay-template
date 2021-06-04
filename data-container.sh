@@ -46,6 +46,7 @@ echo 'Activating your gcloud credentials...'
 gcloud auth activate-service-account --key-file="$GOOGLE_APPLICATION_CREDENTIALS"
 gcloud config set project "$GCLOUD_PROJECT"
 gcloud config set run/region us-central1
+gcloud auth configure-docker --quiet
 
 TAG="$(find data -type f | xargs -I{} -- md5sum {} | awk '{print $1}' | md5sum - | awk '{print $1}')"
 URL="us.gcr.io/$GCLOUD_PROJECT/$SERVICE"
@@ -53,7 +54,6 @@ IMAGE="$URL:$TAG"
 docker build . -t "$IMAGE"
 docker push "$IMAGE"
 
-gcloud auth configure-docker --quiet
 REVISION="$(gcloud run revisions list --platform=managed --service="$SERVICE" | awk '$3=="yes" {print $2}' | head -n1)"
 
 if [ -z "$REVISION" ]; then
@@ -70,7 +70,7 @@ if [ "$IMAGE" = "$CURRENT_IMAGE" ]; then
   SERVICE_URL="$(gcloud run services list --platform=managed | awk "\$2==\"$SERVICE\" {print \$4}" | head -n1)"
   echo "The URL is: $SERVICE_URL"
 else
-  gcloud run --platform=managed deploy "$SERVICE" --image="$IMAGE" --allow-unauthenticated \
+  gcloud run deploy "$SERVICE" --platform=managed --image="$IMAGE" --allow-unauthenticated \
     --set-env-vars="TITLE=$TITLE,PASSWORD=$PASSWORD"
 fi
 
