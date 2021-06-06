@@ -53,7 +53,7 @@ function data_table_block (context, done) {
           function (fieldText) {
             var fieldValue = fieldText.match (/"?([^\"]*)"?/);
             return $('<th></th>')
-              .attr ('style', 'text-align: right;')
+              .attr ('style', 'text-align: middle;')
               .text (fieldValue [1]);
           },
           [headerLine]
