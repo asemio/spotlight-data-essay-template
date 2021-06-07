@@ -16,7 +16,7 @@ network = function (
     .attr ('id', containerID)
     .attr ('viewBox', '0 0 ' + width + ' ' + height)
 
-  d3.csv (dataFileName, function (csv) {
+  d3.csv (dataFileName).then (function (csv) {
     const { max, nodes, nodeLinks} = csv
       .reduce((acc, row) => {
         const value = parseInt (row.overlap)
@@ -81,17 +81,17 @@ network = function (
       .range (d3.schemeSet2)
 
     const drag = simulation => {
-      function dragstarted(d) {
-        if (!d3.event.active) simulation.alphaTarget(0.2).restart();
+      function dragstarted(e, d) {
+        if (!e.active) simulation.alphaTarget(0.2).restart();
         d.fx = d.x;
         d.fy = d.y;
       }
-      function dragged(d) {
-        d.fx = d3.event.x;
-        d.fy = d3.event.y;
+      function dragged(e, d) {
+        d.fx = e.x;
+        d.fy = e.y;
       }
-      function dragended(d) {
-        if (!d3.event.active) simulation.alphaTarget(0);
+      function dragended(e,d) {
+        if (!e.active) simulation.alphaTarget(0);
         d.fx = null;
         d.fy = null;
       }
